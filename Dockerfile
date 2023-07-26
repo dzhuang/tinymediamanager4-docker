@@ -4,7 +4,7 @@
 FROM jlesage/baseimage-gui:alpine-3.12-glibc
 
 # Define software versions.
-ARG TMM_VERSION=4.3.8.1
+ARG TMM_VERSION=4.3.12
 
 # Define software download URLs.
 ARG TMM_URL=https://release.tinymediamanager.org/v4/dist/tmm_${TMM_VERSION}_linux-amd64.tar.gz
@@ -47,6 +47,12 @@ RUN wget "https://www.archlinux.org/packages/core/x86_64/zlib/download" -O /tmp/
 RUN \
     APP_ICON_URL=https://gitlab.com/tinyMediaManager/tinyMediaManager/raw/45f9c702615a55725a508523b0524166b188ff75/AppBundler/tmm.png && \
     install_app_icon.sh "$APP_ICON_URL"
+
+
+# Install Chinese fonts
+RUN wget https://mirrors.aliyun.com/alpine/edge/testing/x86_64/font-wqy-zenhei-0.9.45-r2.apk -O wqy.apk \
+    && apk add --allow-untrusted wqy.apk \
+    && rm -rf /tmp/wqy.apk
 
 # Add files.
 COPY rootfs/ /

@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [4.3.12] - 2023-07-26
+
+### Added
+- Added Chinese font.
+
+### Changed
+- Upgraded TMM version to latest (v4.3.12).
+
+### Fixed
+- Fix version not updated when tmm.jar updated.
+
 ## [4.3.8.1] - 2023-01-17
 
 ### Added
