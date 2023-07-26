@@ -10,7 +10,7 @@ log() {
 # Make sure mandatory directories exist.
 mkdir -p /config/logs
 
-if [ ! -f /config/tmm.jar ]; then
+if [ ! -f /config/tmm.jar ] || [ ! -f /config/tmm.tar.gz ] || ! cmp /defaults/tmm.tar.gz /config/tmm.tar.gz; then
     cp -r /defaults/* /config/
     cd /config
     tar --strip-components=1 -zxvf /config/tmm.tar.gz
